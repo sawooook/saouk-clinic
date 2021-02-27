@@ -8,9 +8,9 @@ import springboot.practice.sawoookclinic.domain.dto.Reservation.ReservationReque
 @Controller
 public class ReservationController {
 
-    @GetMapping("/reserve/new")
-    public String createReserve(ReservationRequestDto reservationRequestDto, Model model) {
-        model.addAttribute(new reservationRequestDto());
-        return ""
-    }
+//    @GetMapping("/reserve/new")
+//    public String createReserve(ReservationRequestDto reservationRequestDto, Model model) {
+//        model.addAttribute(new reservationRequestDto());
+//        return ""
+//    }
 }

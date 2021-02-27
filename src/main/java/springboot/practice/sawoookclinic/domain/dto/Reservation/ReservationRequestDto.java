@@ -15,7 +15,7 @@ public class ReservationRequestDto {
     public ReservationRequestDto(Reservation entity) {
         this.id = entity.getId();
         this.reservationTime = entity.getReservationTime();
-        DoctorId = entity.getDoctor().ge;
+//        DoctorId = entity.getDoctor().ge;
         this.ownerId = ownerId;
     }
 }
