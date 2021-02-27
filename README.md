@@ -1,3 +1,3 @@
-# saouk-clinic
+# saoukClinic
 
 pet-clinic Clone Project
