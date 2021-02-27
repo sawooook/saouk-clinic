@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import springboot.practice.sawoookclinic.domain.Owner;
+import springboot.practice.sawoookclinic.domain.dto.OwnerForm;
 import springboot.practice.sawoookclinic.repository.OwnerRepository;
 import springboot.practice.sawoookclinic.service.OwnerService;
 
@@ -18,6 +19,13 @@ public class OwnerController {
     OwnerService ownerServic;
 
     private static final String VIEWS_OWNER_CREATE_OR_UPDATE_FORM = "owner/createOrUpdateOwnerForm";
+
+
+    @GetMapping("/owners/new")
+    public String createForm(Model model) {
+        model.addAttribute("ownerForm",new OwnerForm());
+        return "owener/createOwenerForm";
+    }
 
     @GetMapping("/owners")
     public String ownersList(Model model) {
@@ -33,10 +41,4 @@ public class OwnerController {
         return "owner/findOwners";
     }
 
-    @GetMapping("/owners/new")
-    public String initCreationForm(Map<String, Object> model) {
-        Owner owner = new Owner();
-        model.put("owner", owner);
-        return VIEWS_OWNER_CREATE_OR_UPDATE_FORM;
-    }
 }

@@ -6,17 +6,20 @@ import org.springframework.transaction.annotation.Transactional;
 import springboot.practice.sawoookclinic.domain.Owner;
 
 import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import java.util.List;
 
 @Repository
 @RequiredArgsConstructor
 public class OwnerRepository {
 
+    @PersistenceContext
     private final EntityManager em;
 
     public void save(Owner owner) {
         em.persist(owner);
     }
+
 
     public Owner findOne(Long ownerId) {
         return em.find(Owner.class, ownerId);

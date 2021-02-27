@@ -17,4 +17,9 @@ public class OwnerService {
     public List<Owner> findAll() {
         return ownerRepository.findAll();
     }
+
+    public Long join(Owner owner) {
+        ownerRepository.save(owner);
+        return owner.getId();
+    }
 }

@@ -4,10 +4,12 @@ import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.annotation.Rollback;
 import org.springframework.transaction.annotation.Transactional;
 import springboot.practice.sawoookclinic.domain.Owner;
 import springboot.practice.sawoookclinic.repository.OwnerRepository;
 
+import javax.persistence.EntityManager;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -28,6 +30,10 @@ class OwnerServiceTest {
         owner.setCity("seoul");
         owner.setName("saouk");
         owner.setAge(18);
+
+        System.out.println("=======================");
+        System.out.println(owner);
+        System.out.println("=======================");
 
         ownerRepository.save(owner);
 
@@ -60,4 +66,5 @@ class OwnerServiceTest {
         // 2번 저장 주인
         Assertions.assertThat(owner1.getId()).isEqualTo(all.get(1).getId());
     }
+
 }
