@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<div class="container">
+
+    <H2> 환영합니다 견주님!</H2>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>이름</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="doctor : ${doctor}">
+            <td th:text="${doctor.name}"></td>
+        </tr>
+        </tbody>
+
+    </table>
+</div>
+</body>
+</html>

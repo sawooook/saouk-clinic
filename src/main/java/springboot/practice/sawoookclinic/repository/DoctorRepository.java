@@ -23,6 +23,6 @@ public class DoctorRepository {
     }
 
     public List<Doctor> findAll() {
-        return em.createQuery("select D from DOCTOR D", Doctor.class).getResultList();
+        return em.createQuery("select D from Doctor D", Doctor.class).getResultList();
     }
 }

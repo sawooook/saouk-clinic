@@ -1,4 +1,4 @@
-package springboot.practice.sawoookclinic.domain.dto;
+package springboot.practice.sawoookclinic.domain.dto.owner;
 
 import lombok.Getter;
 import lombok.Setter;

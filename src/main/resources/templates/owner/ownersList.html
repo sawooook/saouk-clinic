@@ -13,17 +13,18 @@
         <th>City</th>
         <th>age</th>
         <th style="width: 120px">Telephone</th>
+        <th>상세보기</th>
     </tr>
     </thead>
     <tbody>
-    <tr th:each="owner : ${owner}">
-        <td th:text="${owner.name}"></td>
-        <td th:text="${owner.city}"></td>
-        <td th:text="${owner.telephone}"></td>
-        <td th:text="${owner.age}"></td>
-
-<!--        <td><span th:each="pet : ${owner.pets}" th:text="${pet.name} "/></td>-->
-    </tr>
+        <tr th:each="owner : ${owner}">
+            <td th:text="${owner.name}"></td>
+            <td th:text="${owner.city}"></td>
+            <td th:text="${owner.telephone}"></td>
+            <td th:text="${owner.age}"></td>
+            <td><a th:href="@{/owner/{id}/new (id=${owner.id})}">자세히</a></td>
+    <!--        <td><span th:each="pet : ${owner.pets}" th:text="${pet.name} "/></td>-->
+        </tr>
     </tbody>
 </table>
 

@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<div class="container">
+
+    <H2> 환영합니다 견주님!</H2>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>이름</th>
+            <th>도시</th>
+            <th>나이</th>
+            <th>전화번호</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="owner : ${owner}">
+            <td th:text="${owner.getName()}"></td>
+            <td th:text="${owner.getCity()}"></td>
+            <td th:text="${owner.getAge()}"></td>
+            <td th:text="${owner.getTelephone()}"></td>
+            <td><a th:href="@{/owner/{id}/new (id=${owner.id})}">강아지 등록하기</a></td>
+        </tr>
+        </tbody>
+
+    </table>
+</div>
+</body>
+</html>
