@@ -1,13 +1,29 @@
 <!DOCTYPE html>
 
-<html xmlns:th="https://www.thymeleaf.org" th:replace="~{fragments/layout :: layout (~{::body},'home')}">
-
+<html xmlns:th="https://www.thymeleaf.org">
 <body>
 
 <h2 th:text="#{welcome}">Welcome</h2>
 <div class="row">
     <div class="col-md-12">
-        <img class="img-responsive" src="../static/resources/images/pets.png" th:src="@{/resources/images/pets.png}"/>
+        <h1> 사욱 펫 클리닉 입니다.</h1>
+    </div>
+    <div class="jumbotron">
+        <p class="lead"> Owner Page </p>
+        <p>
+            <a class="btn btn-lg btn-secondary" href="/owners/new"> Owner 가입 </a>
+            <a class="btn btn-lg btn-secondary" href="/owners"> Owner 목록 </a>
+        </p>
+        <p>
+            <a class="btn btn-lg btn-secondary" href="/owners"> Doctor 목록 </a>
+            <a class="btn btn-lg btn-secondary" href="/owners"> Dog 목록 </a>
+
+        </p>
+
+        <p>
+            <a class="btn btn-lg btn-secondary" href="/owners"> 예약 내역 </a>
+            <a class="btn btn-lg btn-secondary" href="/owners"> 예약 하기 </a>
+        </p>
     </div>
 </div>
 

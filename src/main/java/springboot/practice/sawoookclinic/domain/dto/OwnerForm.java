@@ -8,6 +8,6 @@ public class OwnerForm {
 
     private String name;
     private String city;
-    private String street;
-    private String zipcode;
+    private int age;
+    private String telephone;
 }

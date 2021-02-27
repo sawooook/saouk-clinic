@@ -20,7 +20,6 @@ public class OwnerRepository {
         em.persist(owner);
     }
 
-
     public Owner findOne(Long ownerId) {
         return em.find(Owner.class, ownerId);
     }

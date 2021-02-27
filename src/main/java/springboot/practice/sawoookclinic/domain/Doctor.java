@@ -20,6 +20,4 @@ public class Doctor extends BaseEntity {
 
     @OneToMany(mappedBy = "doctor")
     private List<Reservation> reservations = new ArrayList<>();
-
-
 }

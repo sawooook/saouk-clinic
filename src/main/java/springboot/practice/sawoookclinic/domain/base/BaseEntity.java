@@ -1,13 +1,20 @@
 package springboot.practice.sawoookclinic.domain.base;
 
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+
+import javax.persistence.EntityListeners;
 import javax.persistence.MappedSuperclass;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @MappedSuperclass
+@EntityListeners(AuditingEntityListener.class)
 public abstract class BaseEntity {
-    private String createdAt;
-    private LocalDate createdDate;
+    @CreatedDate
+    private LocalDateTime createdDateTime;
 
-    private String updateAt;
-    private LocalDate updateDate;
+    @LastModifiedDate
+    private LocalDateTime updateDateTime;
 }
