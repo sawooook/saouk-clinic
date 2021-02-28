@@ -1,8 +1,6 @@
 package springboot.practice.sawoookclinic.domain;
 
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 import springboot.practice.sawoookclinic.domain.base.BaseEntity;
 
 import javax.persistence.*;
@@ -10,6 +8,7 @@ import java.time.LocalDateTime;
 
 @Getter @Setter
 @Entity
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class Reservation extends BaseEntity {
 
     @Id @GeneratedValue

@@ -22,7 +22,7 @@
             <td th:text="${owner.city}"></td>
             <td th:text="${owner.telephone}"></td>
             <td th:text="${owner.age}"></td>
-            <td><a th:href="@{/owner/{id}/new (id=${owner.id})}">자세히</a></td>
+            <td><a th:href="@{/owner/{id} (id=${owner.id})}">자세히</a></td>
     <!--        <td><span th:each="pet : ${owner.pets}" th:text="${pet.name} "/></td>-->
         </tr>
     </tbody>

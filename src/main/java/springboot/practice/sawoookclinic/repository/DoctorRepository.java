@@ -14,8 +14,9 @@ public class DoctorRepository {
 
     private final EntityManager em;
 
-    public void save(Doctor doctor) {
+    public Long save(Doctor doctor) {
         em.persist(doctor);
+        return doctor.getId();
     }
 
     public Doctor finOne(Long doctorId) {

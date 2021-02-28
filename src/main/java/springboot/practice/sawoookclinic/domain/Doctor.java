@@ -1,14 +1,13 @@
 package springboot.practice.sawoookclinic.domain;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 import springboot.practice.sawoookclinic.domain.base.BaseEntity;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
-
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Getter @Setter
 @Entity
 public class Doctor extends BaseEntity {
@@ -18,6 +17,13 @@ public class Doctor extends BaseEntity {
     private Long id;
 
     private String name;
+
+
+    @Builder
+    public Doctor(Long id, String name) {
+        this.id = id;
+        this.name = name;
+    }
 
     @OneToMany(mappedBy = "doctor")
     private List<Reservation> reservations = new ArrayList<>();

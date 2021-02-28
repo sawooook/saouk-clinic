@@ -1,21 +1,15 @@
 package springboot.practice.sawoookclinic.domain.dto.Reservation;
 
 import lombok.Getter;
+import lombok.Setter;
 import springboot.practice.sawoookclinic.domain.Reservation;
 
 import java.time.LocalDateTime;
 
-@Getter
+@Getter @Setter
 public class ReservationRequestDto {
     private Long id;
     private LocalDateTime reservationTime;
-    private Long DoctorId;
+    private Long doctorId;
     private Long ownerId;
-
-    public ReservationRequestDto(Reservation entity) {
-        this.id = entity.getId();
-        this.reservationTime = entity.getReservationTime();
-//        DoctorId = entity.getDoctor().ge;
-        this.ownerId = ownerId;
-    }
 }

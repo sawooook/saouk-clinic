@@ -4,6 +4,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import springboot.practice.sawoookclinic.domain.Doctor;
+import springboot.practice.sawoookclinic.domain.dto.doctor.DoctorRequestDto;
 import springboot.practice.sawoookclinic.domain.dto.doctor.DoctorResponseDto;
 import springboot.practice.sawoookclinic.repository.DoctorRepository;
 
@@ -25,5 +26,10 @@ public class DoctorService {
     public List<DoctorResponseDto> findAll() {
         return doctorRepository.findAll()
                 .stream().map(doctor -> new DoctorResponseDto(doctor)).collect(Collectors.toList());
+    }
+
+    public Long save(Doctor doctor) {
+        Long doctorId = doctorRepository.save(doctor);
+        return doctorId;
     }
 }
